@@ -1,59 +1,54 @@
 import axios from 'axios';
 import React, {Component} from 'react';
 
-<<<<<<< HEAD
-// API_KEY:  AIzaSyDSM-4gOdf1LwrhQQyg7_IMM1icmv4jQUI
 
-class VideoSearch extends Component{
+class VideoSearch extends Component {
 
     constructor(props) {
         super(props);
         this.state = {
-            video: []
+            videos: []
         }
     }
 
     componentDidMount(){
-        this.searchVideo();
+        this.searchVideos();
     }
 
-    searchVideo = async () => {
-        let res = await axios.get("https://www.googleapis.com/youtube/v3/search/?q={this.state}&type=video&videoDuration=any&maxResults=25");
-        this.makeGetRequest();
+    searchVideos = async () => {
+        let res = await axios.get("https://www.googleapis.com/youtube/v3/search/?q={(event)}&type=video&videoDuration=any&maxResults=25&key=AIzaSyDSM-4gOdf1LwrhQQyg7_IMM1icmv4jQUI");
+        console.log(res)
+        this.setState = {
+            videos: res.data
+        }
+        console.log(this.videos)
     }
 
     onChangeHandler = (event) => {
         this.setState({
             [event.target.name]: event.target.value
         });
+        console.log(event.target.value)
+    }
+    onSubmitHandler = (event) => {
+        event.preventDefault();
+        this.searchVideos();
     }
 
-    displayVideos = (event) => {
-        event.preventDefault();
-        this.searchVideo();
+    displayVideos = () => {
+        return this.videos;
     }
 
     render() {
         return (
             <React.Fragment>
-                <div>
-                    <input value={this.state.value} onChange={(event) => this.onChangeHandler(event)} placeholder="Search for video here." />
+                    <input type="text" name="search" onSubmit={(event) => this.onSubmitHandler(event)} onChange={(event) => this.onChangeHandler(event)} value={this.state.value} placeholder="Search for video here." />
+                    <button type="submit" className="btn btn-primary w-md-25">Search</button>
                     {this.displayVideos}
-                </div>
             </React.Fragment>
             
         )
     }
 }
-=======
-class VideoSearch extends Component{
-    constructor(props){
-        super(props);
-        this.state = {
-            search:" "
-        }
-    }
-}
 
->>>>>>> bc3bf94259c5832854f2e813b58c04765a4e7e93
 export default VideoSearch;

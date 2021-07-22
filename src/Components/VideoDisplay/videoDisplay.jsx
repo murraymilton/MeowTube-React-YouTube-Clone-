@@ -15,6 +15,7 @@ class VideoDisplay extends Component {
         video_key:''
         }
         //API Key request here?: will adjust as needed
+        // API_KEY:  
     }
 render(){
     return(
