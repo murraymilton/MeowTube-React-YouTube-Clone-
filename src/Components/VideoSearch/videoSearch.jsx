@@ -1,6 +1,7 @@
 import axios from 'axios';
 import React, {Component} from 'react';
 
+<<<<<<< HEAD
 // API_KEY:  AIzaSyDSM-4gOdf1LwrhQQyg7_IMM1icmv4jQUI
 
 class VideoSearch extends Component{
@@ -44,4 +45,15 @@ class VideoSearch extends Component{
         )
     }
 }
+=======
+class VideoSearch extends Component{
+    constructor(props){
+        super(props);
+        this.state = {
+            search:" "
+        }
+    }
+}
+
+>>>>>>> bc3bf94259c5832854f2e813b58c04765a4e7e93
 export default VideoSearch;
