@@ -15,7 +15,7 @@ class VideoDisplay extends Component {
         video_key:''
         }
         //API Key request here?: will adjust as needed
-    }
+    } //{this.state.video_id}
 render(){
     return(
         <React.Fragment>
