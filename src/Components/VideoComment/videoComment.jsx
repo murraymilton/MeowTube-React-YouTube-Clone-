@@ -10,7 +10,7 @@ class VideoComment extends Component {
                 author: '',
                 text: '',
                 likes: '',
-                video_key: ''
+                videoId: ''
             }]
         }
     }

@@ -1,4 +1,3 @@
-import { render } from '@testing-library/react';
 import React, {Component} from'react';
 import Header from './Header/header';
 import VideoSearch from './VideoSearch/videoSearch';
@@ -15,11 +14,11 @@ class App extends Component{
             videos: []
         }
     }
+ 
 
-render(){
+render() {
     return(
         <React.Fragment>
-
             <Header/>
             <VideoSearch videos={this.state.videos} />
             <container fluid className="app">
