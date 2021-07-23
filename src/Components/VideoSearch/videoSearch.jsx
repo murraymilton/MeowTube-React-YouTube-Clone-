@@ -7,32 +7,36 @@ class VideoSearch extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            videos: []
+            videos: [
+                {videoId: ''}
+            ],
+            search_input: ''
         }
     }
 
-    componentDidMount(){
-        this.searchVideos();
-    }
-
-    searchVideos = async () => {
-        let res = await axios.get("https://www.googleapis.com/youtube/v3/search/?q={(event)}&type=video&videoDuration=any&maxResults=25&key=AIzaSyDSM-4gOdf1LwrhQQyg7_IMM1icmv4jQUI");
-        console.log(res)
-        this.setState = {
-            videos: res.data
-        }
-        console.log(this.videos)
-    }
+    // componentDidMount(){
+    //     this.searchVideos();
+    // }
 
     onChangeHandler = (event) => {
         this.setState({
             [event.target.name]: event.target.value
         });
-        console.log(event.target.value)
+        console.log(this.state.search_input);
     }
+
     onSubmitHandler = (event) => {
         event.preventDefault();
         this.searchVideos();
+    }
+
+    searchVideos = async (event) => {
+        let res = await axios.get(`https://www.googleapis.com/youtube/v3/search/?q=${this.state.search_input}&type=video&videoDuration=any&maxResults=25&key=AIzaSyDSM-4gOdf1LwrhQQyg7_IMM1icmv4jQUI`);
+        console.log(res)
+        this.setState({
+            videos: res.data
+        });
+        console.log(this.state.videos)
     }
 
     displayVideos = () => {
@@ -42,8 +46,10 @@ class VideoSearch extends Component {
     render() {
         return (
             <React.Fragment>
-                    <input type="text" name="search" onSubmit={(event) => this.onSubmitHandler(event)} onChange={(event) => this.onChangeHandler(event)} value={this.state.value} placeholder="Search for video here." />
+                <form onSubmit={this.onSubmitHandler}>
+                <input type="text" name="search_input"  onChange={this.onChangeHandler} value={this.state.search_input} placeholder="Search for video here." />
                     <button type="submit" className="btn btn-primary w-md-25">Search</button>
+                </form>
                     {this.displayVideos}
             </React.Fragment>
             
