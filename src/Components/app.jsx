@@ -4,6 +4,8 @@ import VideoSearch from './VideoSearch/videoSearch';
 import VideoDisplay from './VideoDisplay/videoDisplay';
 import RelatedVideos from './VideoSearch/relatedVideos';
 import VideoComment from './VideoComment/videoComment';
+import Navbar from './NavBar/navBar';
+import './app.css'
 
 
 class App extends Component{
@@ -19,6 +21,7 @@ class App extends Component{
 render() {
     return(
         <React.Fragment>
+            <Navbar/>
             <Header/>
             <VideoSearch videos={this.state.videos} />
             <container fluid className="app">
