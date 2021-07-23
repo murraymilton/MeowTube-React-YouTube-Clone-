@@ -4,7 +4,7 @@ import './_header.scss';
 const Header = () => {
     return(
         <div>
-            MEOW TUBE-------PLaceholder for HEADER
+            MEOW TUBE-------Placeholder for HEADER
         </div>
     )
 }

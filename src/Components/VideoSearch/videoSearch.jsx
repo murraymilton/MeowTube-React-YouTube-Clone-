@@ -7,16 +7,10 @@ class VideoSearch extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            videos: [
-                {videoId: ''}
-            ],
+            videos: [],
             search_input: ''
         }
     }
-
-    // componentDidMount(){
-    //     this.searchVideos();
-    // }
 
     onChangeHandler = (event) => {
         this.setState({
@@ -29,31 +23,24 @@ class VideoSearch extends Component {
         this.searchVideos();
     }
 
-    searchVideos = async (event) => {
+    searchVideos = async () => {
         let res = await axios.get(`https://www.googleapis.com/youtube/v3/search/?q=${this.state.search_input}&type=video&videoDuration=any&maxResults=25&key=AIzaSyDSM-4gOdf1LwrhQQyg7_IMM1icmv4jQUI`);
         this.setState({
             videos: res.data
         });
+        console.log(this.state.videos)
     }
 
-    displayVideos = async (video, videoId) => {
-        this.state.videos.map(video, videoId)
-        return (
-            await axios.post(`https://youtube.googleapis.com/youtube/v3/thumbnails/set?videoId=${this.state.videos.videoId}&key=AIzaSyDSM-4gOdf1LwrhQQyg7_IMM1icmv4jQUI`)
-        )
-        
-    }
+
 
     render() {
         return (
             <React.Fragment>
                 <form onSubmit={this.onSubmitHandler}>
-                <input type="text" name="search_input"  onChange={this.onChangeHandler} value={this.state.search_input} placeholder="Search for video here." />
-                    <button type="submit" className="btn btn-primary w-md-25">Search</button>
+                    <input type="text" name="search_input"  onChange={this.onChangeHandler} value={this.state.search_input} placeholder="Search for video here." />
+                    <button type="submit" className="btn btn-primary w-md-25">Search</button>   
                 </form>
-                    {this.displayVideos}
-            </React.Fragment>
-            
+            </React.Fragment>  
         )
     }
 }
