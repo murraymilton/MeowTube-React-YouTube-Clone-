@@ -1,6 +1,7 @@
 import axios from 'axios';
 import React, {Component} from 'react';
 
+// API_KEY:  AIzaSyDSM-4gOdf1LwrhQQyg7_IMM1icmv4jQUI
 
 class VideoSearch extends Component {
 
@@ -20,7 +21,7 @@ class VideoSearch extends Component {
 
     onSubmitHandler = (event) => {
         event.preventDefault();
-        this.searchVideos();
+        this.searchVideos(this.state.search_input);
     }
 
     searchVideos = async () => {
@@ -36,11 +37,14 @@ class VideoSearch extends Component {
     render() {
         return (
             <React.Fragment>
-                <form onSubmit={this.onSubmitHandler}>
-                    <input type="text" name="search_input"  onChange={this.onChangeHandler} value={this.state.search_input} placeholder="Search for video here." />
-                    <button type="submit" className="btn btn-primary w-md-25">Search</button>   
+                <div className="">
+                <form className="text-center"onSubmit={this.onSubmitHandler}>
+                <input type="text" name="search_input"  onChange={this.onChangeHandler} value={this.state.search_input} placeholder="Search for video here." />
+                    <button type="submit" className="btn btn-primary w-md-25">Search</button>
                 </form>
-            </React.Fragment>  
+                    {this.displayVideos}
+                    </div>
+            </React.Fragment>
         )
     }
 }
