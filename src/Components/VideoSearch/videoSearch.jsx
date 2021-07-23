@@ -1,11 +1,6 @@
 import axios from 'axios';
 import React, {Component} from 'react';
 
-<<<<<<< HEAD
-
-// API_KEY:  AIzaSyDSM-4gOdf1LwrhQQyg7_IMM1icmv4jQUI
-=======
->>>>>>> 4c4d61ef6aa1acac49e9d94fd525ce2bfe48adc1
 
 class VideoSearch extends Component {
 
