@@ -4,8 +4,12 @@ import VideoSearch from './VideoSearch/videoSearch';
 import VideoDisplay from './VideoDisplay/videoDisplay';
 import RelatedVideos from './VideoSearch/relatedVideos';
 import VideoComment from './VideoComment/videoComment';
+<<<<<<< HEAD
 import Navbar from './NavBar/navBar';
 import './app.css'
+=======
+import axios from 'axios';
+>>>>>>> 148e158cb114fe0d72c68e70e85412a89cda793a
 
 
 class App extends Component{
@@ -13,10 +17,28 @@ class App extends Component{
     constructor(props) {
         super(props);
         this.state = {
-            videos: []
+            videos: [
+                {videoId: ''},
+                {thumbnails: ''}
+            ]
         }
     }
  
+    displayVideos = async (event) => {
+
+        let res = await axios.get(`https://www.googleapis.com/youtube/v3/activities/?${this.state.video.videoId}&snippet=snippet.thumbnails.default.url`)
+        console.log(res)
+        this.setState({
+            thumbnails: res.data
+           });
+        this.state.videos.map((video, videoId) => {
+           return(
+            //    key = videoId
+               this.state.video.thumbnails
+           )
+        });
+    }
+
 
 render() {
     return(
@@ -25,8 +47,8 @@ render() {
             <Header/>
             <VideoSearch videos={this.state.videos} />
             <container fluid className="app">
-            <VideoDisplay/>
-            <RelatedVideos videos={this.state.videos} />
+            <VideoDisplay displayVideos={this.displayVideos} />
+            <RelatedVideos displayVideos={this.displayVideos} />
             <VideoComment videos={this.state.videos} />
             </container>
         </React.Fragment>

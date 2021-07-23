@@ -11,7 +11,11 @@ class RelatedVideos extends Component {
 
     render(){
         return(
-            <h1>Related videos here.</h1>
+            <div className='video-preview'>
+                <div className='image-container'>  
+                    <img id="thumbnail" alt="" type="text/html" width="213" height="120" src={this.displayVideos} frameBorder="0" />
+                </div>
+            </div>
         )
     }
 }

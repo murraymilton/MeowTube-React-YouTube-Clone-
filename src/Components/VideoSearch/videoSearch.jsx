@@ -8,16 +8,10 @@ class VideoSearch extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            videos: [
-                {videoId: ''}
-            ],
+            videos: [],
             search_input: ''
         }
     }
-
-    // componentDidMount(){
-    //     this.searchVideos();
-    // }
 
     onChangeHandler = (event) => {
         this.setState({
@@ -30,19 +24,12 @@ class VideoSearch extends Component {
         this.searchVideos(this.state.search_input);
     }
 
-    searchVideos = async (event) => {
+    searchVideos = async () => {
         let res = await axios.get(`https://www.googleapis.com/youtube/v3/search/?q=${this.state.search_input}&type=video&videoDuration=any&maxResults=25&key=AIzaSyDSM-4gOdf1LwrhQQyg7_IMM1icmv4jQUI`);
         this.setState({
             videos: res.data
         });
-    }
-
-    displayVideos = async (video, videoId) => {
-        this.state.videos.map(video, videoId)
-        return (
-            await axios.post(`https://youtube.googleapis.com/youtube/v3/thumbnails/set?videoId=${this.state.videos.videoId}&key=AIzaSyDSM-4gOdf1LwrhQQyg7_IMM1icmv4jQUI`)
-        )
-        
+        console.log(this.state.videos)
     }
 
     render() {
@@ -56,7 +43,6 @@ class VideoSearch extends Component {
                     {this.displayVideos}
                     </div>
             </React.Fragment>
-            
         )
     }
 }
