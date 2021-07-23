@@ -8,11 +8,16 @@ class VideoDisplay extends Component {
     constructor(props){
     super(props);
     this.state = {
-        video_id: "",
-        author:"",
-        text:"",
-        likes: 0,
-        videoId:''
+        comment: [
+            {author:""},
+            {text:""},
+            {likes: 0},
+            {videoId:''}
+        ],
+        videos: [
+           { videoId:''}
+        ]
+
         }
 
     } //{this.state.video_id}

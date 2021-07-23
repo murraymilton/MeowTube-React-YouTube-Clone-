@@ -22,7 +22,6 @@ class VideoSearch extends Component {
         this.setState({
             [event.target.name]: event.target.value
         });
-        console.log(this.state.search_input);
     }
 
     onSubmitHandler = (event) => {
@@ -32,15 +31,17 @@ class VideoSearch extends Component {
 
     searchVideos = async (event) => {
         let res = await axios.get(`https://www.googleapis.com/youtube/v3/search/?q=${this.state.search_input}&type=video&videoDuration=any&maxResults=25&key=AIzaSyDSM-4gOdf1LwrhQQyg7_IMM1icmv4jQUI`);
-        console.log(res)
         this.setState({
             videos: res.data
         });
-        console.log(this.state.videos)
     }
 
-    displayVideos = () => {
-        return this.videos;
+    displayVideos = async (video, videoId) => {
+        this.state.videos.map(video, videoId)
+        return (
+            await axios.post(`https://youtube.googleapis.com/youtube/v3/thumbnails/set?videoId=${this.state.videos.videoId}&key=AIzaSyDSM-4gOdf1LwrhQQyg7_IMM1icmv4jQUI`)
+        )
+        
     }
 
     render() {
