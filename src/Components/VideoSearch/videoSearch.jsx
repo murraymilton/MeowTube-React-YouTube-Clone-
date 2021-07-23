@@ -32,8 +32,6 @@ class VideoSearch extends Component {
         console.log(this.state.videos)
     }
 
-
-
     render() {
         return (
             <React.Fragment>

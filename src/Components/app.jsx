@@ -41,8 +41,8 @@ render() {
             <Header/>
             <VideoSearch videos={this.state.videos} />
             <container fluid className="app">
-            <VideoDisplay/>
-            <RelatedVideos videos={this.state.videos} />
+            <VideoDisplay displayVideos={this.displayVideos} />
+            <RelatedVideos displayVideos={this.displayVideos} />
             <VideoComment videos={this.state.videos} />
             </container>
         </React.Fragment>
