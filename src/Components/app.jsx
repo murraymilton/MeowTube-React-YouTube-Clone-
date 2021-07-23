@@ -4,12 +4,10 @@ import VideoSearch from './VideoSearch/videoSearch';
 import VideoDisplay from './VideoDisplay/videoDisplay';
 import RelatedVideos from './VideoSearch/relatedVideos';
 import VideoComment from './VideoComment/videoComment';
-<<<<<<< HEAD
 import Navbar from './NavBar/navBar';
 import './app.css'
-=======
 import axios from 'axios';
->>>>>>> 148e158cb114fe0d72c68e70e85412a89cda793a
+
 
 
 class App extends Component{
