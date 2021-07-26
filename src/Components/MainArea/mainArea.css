@@ -1,0 +1,35 @@
+.mainArea {
+  display: flex;
+  justify-content: space-between;
+}
+.Sidebar {
+  display: grid;
+  width: 17%;
+  height: 1rem;
+  background-color: red;
+}
+.Sidebar > div {
+  height: auto;
+}
+.Home {
+  border-bottom: 1px black solid;
+}
+.QuicK_Icon {
+  display: flex;
+  align-items: center;
+  font-size: 1.7rem;
+  height: 1rem;
+}
+.QuicK_Icon > div {
+  padding: 0 12px;
+}
+
+/*Main Place setter*/
+
+.Main {
+  display: flex;
+  justify-content: flex-start;
+  background-color: turquoise;
+  width: 83%;
+  height: 60rem;
+}

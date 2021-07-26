@@ -1,6 +1,6 @@
-import React, {Component} from 'react';
 import axios from 'axios';
-import VideoSearch from '../VideoSearch/videoSearch';
+import React, {Component} from 'react';
+import VideoSearch from "../VideoSearch/videoSearch"
 
 
 
@@ -19,18 +19,32 @@ class VideoDisplay extends Component {
            { videoId:''}
         ]
 
-        }
-
-    } //{this.state.video_id}
-
+        };
+    }
+    componentDidMount(){
+        this.getVideoId();
+    }
+    getVideoId = async () => {
+        let res = await axios.get(`https://youtube.googleapis.com/youtube/v3/thumbnails/set?videoId=${this.state.videos.videoId}&key=AIzaSyDSM-4gOdf1LwrhQQyg7_IMM1icmv4jQUI`)
+        console.log(res);
+        this.setState({
+            comment: res.data.items,
+            videos: this.props.videos,
+        })
+    }
 render(){
     return(
         <React.Fragment>
-           <div className="responsive-video"> 
-           <h2>{this.props.video}</h2>
-           <iframe id="ytplayer" type="text/html" width="640" height="360"
-  src="https://www.youtube.com/embed/hY7m5jjJ9mM?autoplay=1&origin=http://example.com"
-  frameBorder="0"></iframe></div>
+           <container fluid > 
+           <iframe style={{position: 'relative', top: '0px'}}
+            id="display"
+            width="640" 
+            height="360" 
+            title="Main Video Player"
+            src={`https://www.youtube.com/embed/${this.state.videos.videoId}?autoplay=0&origin=http://example.com`}
+            padding="0">
+            </iframe>
+            </container>
         </React.Fragment>
     
     )
