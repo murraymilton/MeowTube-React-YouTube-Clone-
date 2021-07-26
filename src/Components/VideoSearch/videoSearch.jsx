@@ -22,14 +22,24 @@ class VideoSearch extends Component {
     onSubmitHandler = (event) => {
         event.preventDefault();
         this.searchVideos(this.state.search_input);
+        return(
+            this.state.videos
+        )
     }
 
+    
     searchVideos = async () => {
-        let res = await axios.get(`https://www.googleapis.com/youtube/v3/search/?q=${this.state.search_input}&type=video&videoDuration=any&maxResults=25&key=AIzaSyDSM-4gOdf1LwrhQQyg7_IMM1icmv4jQUI`);
-        this.setState({
-            videos: res.data
-        });
-        console.log(this.state.videos)
+        try {
+            let res = await axios.get(`https://www.googleapis.com/youtube/v3/search/?q=${this.state.search_input}&type=video&videoDuration=any&maxResults=25&key=AIzaSyDSM-4gOdf1LwrhQQyg7_IMM1icmv4jQUI`);
+            this.setState({
+                videos: res.data
+            });
+            this.videoInfo(this.state.videos);
+            this.displayVideos(this.state.videos);
+        }
+        catch(ex) {
+            console.log('Error in API call.');
+        }
     }
 
     render() {
@@ -40,8 +50,7 @@ class VideoSearch extends Component {
                 <input type="text" name="search_input"  onChange={this.onChangeHandler} value={this.state.search_input} placeholder="Search for video here." />
                     <button type="submit" className="btn btn-primary w-md-25">Search</button>
                 </form>
-                    {this.displayVideos}
-                    </div>
+                </div>
             </React.Fragment>
         )
     }
