@@ -13,7 +13,7 @@ function MainArea(){
             <div className=" Sidebar">
                 <div className="Home">
                     <div className="Quick_Icon">
-                        <MdHome color="grey"fontSize="3rem"/>
+                        <MdHome color="red"fontSize="3rem"/>
                         <div>Home</div>
                     </div>
                     <div className="Quick_Icon">
@@ -72,7 +72,7 @@ function MainArea(){
 
 
             <div className="Main">
-                Main
+                Main For Video Thumbnails
             </div>
         </div>
     )

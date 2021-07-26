@@ -4,20 +4,22 @@ html {
 }
 body {
   font: 1.6rem helvetica;
-  height: 100vh;
+  height: 5vh;
   margin: 0;
   background-color: #f9f9f9;
 }
 .headerArea {
   height: 6rem;
-  width: 100%;
+  width: 85%;
 }
 .Header {
   display: flex;
   align-items: center;
   justify-content: space-between;
+  padding: 10px;
   height: 6rem;
   width: 100%;
+  top: 0;
   background-color: white;
   position: fixed;
 }
@@ -46,15 +48,16 @@ input::placeholder {
   display: flex;
   align-items: center;
   width: 40%;
-  border: 1px solid black;
+  border: 1px solid lightgray;
 }
 .search {
-  width: 30px !important;
+  width: 50px !important;
   background-color: #fafafa;
-  border-left: 1px solid black;
-  border-right: 1px solid black;
+  border-left: 1px solid lightgray;
+  border-right: 1px solid lightgray;
   color: black;
-  padding: 2 px;
+  cursor: pointer;
+  padding: 0 10 px;
 }
 .Icon {
   display: flex;

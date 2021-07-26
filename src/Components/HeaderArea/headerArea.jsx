@@ -14,6 +14,7 @@ function HeaderArea(){
                         &#9776;
                     </button>
                     <FaYoutube color="red" fontSize="3rem"/>
+                    <div>MeowTube</div>
                 </header>
                 <div className="Search">
                     <input type="search" placeholder="Search"></input>
