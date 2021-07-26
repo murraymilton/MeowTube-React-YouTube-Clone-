@@ -1,12 +1,12 @@
 import React, {Component} from'react';
-import Header from './Header/header';
 import VideoSearch from './VideoSearch/videoSearch';
+import HeaderArea from './HeaderArea/headerArea';
 import VideoDisplay from './VideoDisplay/videoDisplay';
 import RelatedVideos from './VideoSearch/relatedVideos';
 import VideoComment from './VideoComment/videoComment';
-import Navbar from './NavBar/navBar';
 import './app.css'
 import axios from 'axios';
+import MainArea from './MainArea/mainArea';
 
 
 
@@ -41,8 +41,8 @@ class App extends Component{
 render() {
     return(
         <React.Fragment>
-            <Navbar/>
-            <Header/>
+            <HeaderArea/>
+            <MainArea/>
             <VideoSearch videos={this.state.videos} />
             <container fluid className="app">
             <VideoDisplay displayVideos={this.displayVideos} />
