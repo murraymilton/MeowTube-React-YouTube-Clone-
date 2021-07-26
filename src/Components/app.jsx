@@ -15,24 +15,24 @@ class App extends Component{
     constructor(props) {
         super(props);
         this.state = {
-            videos: [
-                {videoId: ''},
-                {thumbnails: ''}
-            ]
+            videos: []
         }
     }
- 
-    displayVideos = async (event) => {
+    
 
-        let res = await axios.get(`https://www.googleapis.com/youtube/v3/activities/?${this.state.video.videoId}&snippet=snippet.thumbnails.default.url`)
-        console.log(res)
+    videoInfo = async () => {
+        let res = await axios.get(`https://www.googleapis.com/youtube/v3/videos?part=snippet&id=${this.state.videos.videoId}&key=AIzaSyDSM-4gOdf1LwrhQQyg7_IMM1icmv4jQUI`)
         this.setState({
-            thumbnails: res.data
-           });
+            videos:res.data
+        })
+    }    
+
+    displayVideos = () => {
         this.state.videos.map((video, videoId) => {
            return(
-            //    key = videoId
-               this.state.video.thumbnails
+               this.setState({
+                video: axios.get(`https://i.ytimg.com/vi/${this.state.video.id.videoId}/default.jpg`)
+               })
            )
         });
     }
@@ -42,11 +42,11 @@ render() {
         <React.Fragment>
             <HeaderArea/>
             <MainArea/>
-            <VideoSearch videos={this.state.videos} />
-            <container fluid className="app"> */}
+            <VideoSearch videos={this.state.videos} videoInfo={this.videoInfo} displayVideos={this.displayVideos} />
+            <container fluid className="app">
             <VideoDisplay displayVideos={this.displayVideos} />
             <VideoComment videos={this.state.videos} />
-            <RelatedVideos displayVideos={this.displayVideos} />
+            <RelatedVideos videos={this.state.videos} videoInfo={this.videoInfo} displayVideos={this.displayVideos} />
             </container>
         </React.Fragment>
     )
