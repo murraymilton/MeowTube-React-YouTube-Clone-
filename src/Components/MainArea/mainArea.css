@@ -1,15 +1,14 @@
-.mainArea {
+.MainArea {
   display: flex;
-  justify-content: space-between;
+  padding: space-between;
 }
 .Sidebar {
-  display: grid;
+  display: flex;
   width: 17%;
   height: 1rem;
   background-color: red;
 }
 .Sidebar > div {
-  height: auto;
 }
 .Home {
   border-bottom: 1px black solid;
@@ -18,7 +17,7 @@
   display: flex;
   align-items: center;
   font-size: 1.7rem;
-  height: 1rem;
+  padding: 10px;
 }
 .QuicK_Icon > div {
   padding: 0 12px;
