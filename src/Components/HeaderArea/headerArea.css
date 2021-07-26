@@ -40,6 +40,7 @@ input[type="search"] {
   height: 3.5rem;
   width: 100%;
   border: none;
+  flex: 1;
 }
 input::placeholder {
   font-size: 2rem;
@@ -71,4 +72,11 @@ input::placeholder {
   border-radius: 50%;
   height: 40px;
   height: 40px;
+}
+.button {
+  width: 50px !important;
+  border-color: #fafafa;
+  border-left: 1px solid lightgray;
+  color: gray;
+  cursor: pointer;
 }

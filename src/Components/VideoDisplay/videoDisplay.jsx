@@ -39,7 +39,7 @@ render(){
            <iframe style={{position: 'relative', top: '0px'}}
             id="display"
             width="640" 
-            height="360" 
+            height="390" 
             title="Main Video Player"
             src={`https://www.youtube.com/embed/${this.state.videos.videoId}?autoplay=0&origin=http://example.com`}
             padding="0">
