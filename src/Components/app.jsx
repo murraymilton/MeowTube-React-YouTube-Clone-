@@ -42,7 +42,7 @@ render() {
         <React.Fragment>
             <HeaderArea/>
             <MainArea/>
-            <VideoSearch videos={this.state.videos} videosInfo={this.videoInfo} displayVideos={this.displayVideos} />
+            <VideoSearch videos={this.state.videos} videoInfo={this.videoInfo} displayVideos={this.displayVideos} />
             <container fluid className="app">
             <VideoDisplay displayVideos={this.displayVideos} />
             <RelatedVideos videos={this.state.videos} videoInfo={this.videoInfo} displayVideos={this.displayVideos} />

@@ -1,7 +1,4 @@
-// import axios from 'axios';
 import React, {Component} from 'react';
-// import VideoSearch from "../VideoSearch/videoSearch"
-
 
 
 class VideoDisplay extends Component {
@@ -11,7 +8,7 @@ class VideoDisplay extends Component {
         videos: []
         };
     }
-    
+
 
     onChangeHandler = (event) => {
         this.videoInfo();

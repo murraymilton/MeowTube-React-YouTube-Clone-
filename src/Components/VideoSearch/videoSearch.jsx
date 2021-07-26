@@ -27,7 +27,6 @@ class VideoSearch extends Component {
         )
     }
 
-    
     searchVideos = async () => {
         try {
             let res = await axios.get(`https://www.googleapis.com/youtube/v3/search/?q=${this.state.search_input}&type=video&videoDuration=any&maxResults=25&key=AIzaSyDSM-4gOdf1LwrhQQyg7_IMM1icmv4jQUI`);
