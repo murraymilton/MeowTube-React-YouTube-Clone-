@@ -1,16 +1,17 @@
 import axios from "axios";
-import React from 'react';
+import React, {Component} from 'react';
 
 
-class videoComment extends React.Component{
-    constructor(props){
-    super(props);
-        this.state({
+class videoComment extends Component{
+
+    constructor(props) {
+        super(props);
+        this.state = {
             videos:[],
             comment:[]
         }
-        );
     }
+
     handlechange = (event) => {
         this.setState({
             [event.target.name]: event.target.value
