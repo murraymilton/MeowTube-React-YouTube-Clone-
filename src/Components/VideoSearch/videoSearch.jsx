@@ -33,8 +33,6 @@ class VideoSearch extends Component {
             this.setState({
                 videos: res.data
             });
-            this.videoInfo(this.state.videos);
-            this.displayVideos(this.state.videos);
         }
         catch(ex) {
             console.log('Error in API call.');
@@ -49,6 +47,12 @@ class VideoSearch extends Component {
                 <input type="text" name="search_input"  onChange={this.onChangeHandler} value={this.state.search_input} placeholder="Search for video here." />
                     <button type="submit" className="btn btn-primary w-md-25">Search</button>
                 </form>
+                </div>
+                <div className = "video-preview">
+                    <div className = "image-container">
+                        <input type="thumbnail" />
+                        <img id="thumbnail" alt="" type="text/html" width="213" height="120" src={this.displayVideo} url={`https://www.youtube.com/watch?v=${this.displayVideo}`} frameBorder="0" />    
+                    </div>
                 </div>
             </React.Fragment>
         )

@@ -9,10 +9,10 @@ class RelatedVideos extends Component {
             videos: []
         }
     }
-    
+
 
     relatedVideoSearch = async () => {
-        let res = await axios.get(`https://www.googleapis.com/youtube/v3/search?relatedToVideoId=${this.props.videoId}&type=video&key=AIzaSyDSM-4gOdf1LwrhQQyg7_IMM1icmv4jQUI`)
+        let res = await axios.get(`https://www.googleapis.com/youtube/v3/search?relatedToVideoId=${this.props.videos.videoId}&type=video&key=AIzaSyDSM-4gOdf1LwrhQQyg7_IMM1icmv4jQUI`)
         this.setState({
             videos: res.data
         })

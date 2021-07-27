@@ -27,14 +27,21 @@ class App extends Component{
         })
     }    
 
-    displayVideos = () => {
+    displayVideos = async () => {
         this.state.videos.map((video, videoId) => {
-           return(
-               this.setState({
-                video: axios.get(`https://i.ytimg.com/vi/${this.state.video.id.videoId}/default.jpg`)
-               })
-           )
+            console.log(this.state.videos)
+            return(
+                this.setState({
+                    video: videoId
+                    })
+            )
         });
+        let res = await axios.get(`https://i.ytimg.com/vi/${this.state.video.videoId}/default.jpg`)
+        return(
+            this.setState({
+                video: res.data
+            })
+        )
     }
 
 render() {
@@ -42,7 +49,7 @@ render() {
         <React.Fragment>
             <HeaderArea/>
             <MainArea/>
-            <VideoSearch videos={this.state.videos} videoInfo={this.videoInfo} displayVideos={this.displayVideos} />
+            <VideoSearch videos={this.state.videos} displayVideos={this.displayVideos} />
             <container fluid className="app">
             <VideoDisplay displayVideos={this.displayVideos} />
             <RelatedVideos videos={this.state.videos} videoInfo={this.videoInfo} displayVideos={this.displayVideos} />
