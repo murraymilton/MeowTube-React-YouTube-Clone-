@@ -2,11 +2,18 @@ import axios from "axios";
 import React, {Component} from 'react';
 
 
+<<<<<<< HEAD
+class videoComment extends React.Component{
+    constructor(props){
+    super(props);
+        this.state = ({
+=======
 class videoComment extends Component{
 
     constructor(props) {
         super(props);
         this.state = {
+>>>>>>> 7306a6f139247a6fe99ef98000dfacefd91635bd
             videos:[],
             comment:[]
         }
