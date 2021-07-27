@@ -67,26 +67,29 @@ class App extends Component{
     console.log(this.state.video)
     }
 
+    getComments = async () => {
+        let res = await axios.get('https://127.0.0.1:8000/comment/')
+        this.setState({
+            comments: res.data
+        })
+    }
+
+    likeComment = async () => {
+        let res = await axios.patch(`https://127.0.0.1:8000/comment/?${this.state.selected_comment}`)
+        this.setState({
+            selected_comment: res.data
+        })
+    }
+
 render() {
     return(
         <React.Fragment>
             <HeaderArea/>
             <MainArea/>
-<<<<<<< HEAD
-            <VideoSearch videos={this.state.videos} displayVideos={this.displayVideos} />
-            <VideoDescription/>
-            <VideoDisplay displayVideos={this.displayVideos} />
-            <h1>you</h1>
-            <VideoComment videos={this.state.videos} />
-            <RelatedVideos relatedVideos={this.state.relatedVideos} videoInfo={this.videoInfo} displayVideos={this.displayVideos} />
-=======
             <VideoSearch videos={this.state.videos} mapVideos={this.mapVideos} />
-            <container fluid className="app">
             <VideoDisplay displayVideos={this.displayVideos} />
             <RelatedVideos videos={this.state.videos} videoInfo={this.videoInfo} displayVideos={this.displayVideos} />
             <VideoComment videos={this.state.videos} />
-            </container>
->>>>>>> b596acb6a3e5c218d7db438656e980da6232c3bf
         </React.Fragment>
     )
   }
