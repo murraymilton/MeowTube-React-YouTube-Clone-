@@ -51,7 +51,7 @@ class VideoSearch extends Component {
                 <div className = "video-preview">
                     <div className = "image-container">
                         <input type="thumbnail" />
-                        <img id="thumbnail" alt="" type="text/html" width="213" height="120" src={this.displayVideo} url={`https://www.youtube.com/watch?v=${this.displayVideo}`} frameBorder="0" />    
+                        <img id="thumbnail" alt="" type="text/html" width="213" height="120" url={`https://www.youtube.com/watch?v=${this.state.mapVideo()}`} frameBorder="0" />    
                     </div>
                 </div>
             </React.Fragment>
