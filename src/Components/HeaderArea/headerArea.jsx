@@ -3,7 +3,6 @@ import './headerArea.css';
 import {FaYoutube} from 'react-icons/fa'
 import {MdSearch, MdVideoCall, MdViewComfy} from 'react-icons/md'
 import {AiTwotoneBell} from 'react-icons/ai'
-import VideoSearch from '../VideoSearch/videoSearch';
 
 function HeaderArea(){
     return(

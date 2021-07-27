@@ -26,7 +26,7 @@ function SearchItem (props) {
         </div>    
     )
 }
-export default SearchResults;
+export default SearchResults.SearchItem;
 
 
 // Test for snippet results........   

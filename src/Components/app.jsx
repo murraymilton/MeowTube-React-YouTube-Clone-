@@ -4,6 +4,7 @@ import HeaderArea from './HeaderArea/headerArea';
 import VideoDisplay from './VideoDisplay/videoDisplay';
 import RelatedVideos from './VideoSearch/relatedVideos';
 import VideoComment from './VideoComment/videoComment';
+import VideoDescription from './VideoDescription/videoDescription';
 import './app.css'
 import axios from 'axios';
 import MainArea from './MainArea/mainArea';
@@ -15,9 +16,36 @@ class App extends Component{
     constructor(props) {
         super(props);
         this.state = {
-            videos: []
+            videos:[],
+            relatedVideos:[]
         }
     }
+    componentDidMount(){
+            this.get_videos()
+    }
+    async get_videos(search){
+        try{
+            let res = await axios.get(`http://www.googleapis.com/youtube/v3/search?part=snippet&id${this.state.videos.videoId}&key=AIzaSyDSM-4gOdf1LwrhQQyg7_IMM1icmv4jQUI`)
+            this.setState({
+                videos:res.data,
+                relatedVideos:null,
+            }); console.log(this.state.videos);
+        }catch(error){
+            console.log(error);
+        }
+    }
+    async relatedVideoSearch(videoId) {
+        try{
+            let res = await axios.get(`https://www.googleapis.com/youtube/v3/search?relatedToVideoId=${this.props.videos.videoId}&type=video&key=AIzaSyDSM-4gOdf1LwrhQQyg7_IMM1icmv4jQUI`)
+            this.setState({
+                relatedVideos: res.data
+            })
+        }catch(error){
+            console.log(error);
+        }
+        
+    }
+
     
 
     videoInfo = async () => {
@@ -44,12 +72,21 @@ render() {
         <React.Fragment>
             <HeaderArea/>
             <MainArea/>
+<<<<<<< HEAD
+            <VideoSearch videos={this.state.videos} displayVideos={this.displayVideos} />
+            <VideoDescription/>
+            <VideoDisplay displayVideos={this.displayVideos} />
+            <h1>you</h1>
+            <VideoComment videos={this.state.videos} />
+            <RelatedVideos relatedVideos={this.state.relatedVideos} videoInfo={this.videoInfo} displayVideos={this.displayVideos} />
+=======
             <VideoSearch videos={this.state.videos} mapVideos={this.mapVideos} />
             <container fluid className="app">
             <VideoDisplay displayVideos={this.displayVideos} />
             <RelatedVideos videos={this.state.videos} videoInfo={this.videoInfo} displayVideos={this.displayVideos} />
             <VideoComment videos={this.state.videos} />
             </container>
+>>>>>>> b596acb6a3e5c218d7db438656e980da6232c3bf
         </React.Fragment>
     )
   }

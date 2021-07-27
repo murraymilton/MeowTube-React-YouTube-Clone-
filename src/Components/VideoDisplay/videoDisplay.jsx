@@ -1,41 +1,21 @@
-import React, {Component} from 'react';
+import React from 'react';
 
-
-class VideoDisplay extends Component {
-    constructor(props){
-    super(props);
-    this.state = {
-        videos: []
-        };
-    }
-
-
-    onChangeHandler = (event) => {
-        this.videoInfo();
-        this.displayVideos();
-    }
-
-render(){
+const VideoDisplay = (props) => {
     return(
-        <React.Fragment>
-            <form onChange={this.onChangeHandler}>
-           <container fluid > 
+       <div>
            <iframe style={{position: 'relative', top: '0px'}}
             id="display"
             width="640" 
             height="390" 
             title="Main Video Player"
-            src={`https://www.youtube.com/embed/${this.state.videos.videoId}?autoplay=0&origin=http://example.com`}
-            padding="0">
+            src={`https://www.youtube.com/embed/${props.videoId}?autoplay=0&origin=http://example.com`}
+            frameBorder="0">
+                {/* <h1>{props.videoId.snippet.title}</h1>
+                <p>{props.videoId.snippet.description}</p> */}
             </iframe>
-            </container>
-            </form>
-        </React.Fragment>
-    
-    )
-}
+
+            </div>
+        );
     }
-
-
 
 export default VideoDisplay;
