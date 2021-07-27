@@ -3,12 +3,13 @@
   padding: space-between;
 }
 .Sidebar {
-  display: flex;
+  display: grid;
   width: 17%;
   height: 1rem;
-  background-color: red;
+  font-weight: bold;
 }
 .Sidebar > div {
+  height: auto;
 }
 .Home {
   border-bottom: 1px black solid;

@@ -52,8 +52,8 @@ render() {
             <VideoSearch videos={this.state.videos} displayVideos={this.displayVideos} />
             <container fluid className="app">
             <VideoDisplay displayVideos={this.displayVideos} />
-            <RelatedVideos videos={this.state.videos} videoInfo={this.videoInfo} displayVideos={this.displayVideos} />
             <VideoComment videos={this.state.videos} />
+            <RelatedVideos videos={this.state.videos} videoInfo={this.videoInfo} displayVideos={this.displayVideos} />
             </container>
         </React.Fragment>
     )
