@@ -4,7 +4,6 @@ import HeaderArea from './HeaderArea/headerArea';
 import VideoDisplay from './VideoDisplay/videoDisplay';
 import RelatedVideos from './VideoSearch/relatedVideos';
 import VideoComment from './VideoComment/videoComment';
-import VideoDescription from './VideoDescription/videoDescription';
 import './app.css'
 import axios from 'axios';
 import MainArea from './MainArea/mainArea';
@@ -88,8 +87,8 @@ render() {
             <MainArea/>
             <VideoSearch videos={this.state.videos} mapVideos={this.mapVideos} />
             <VideoDisplay displayVideos={this.displayVideos} />
-            <RelatedVideos videos={this.state.videos} videoInfo={this.videoInfo} displayVideos={this.displayVideos} />
             <VideoComment videos={this.state.videos} />
+            <RelatedVideos relatedVideos={this.state.relatedVideos} videoInfo={this.videoInfo} displayVideos={this.displayVideos} />
         </React.Fragment>
     )
   }
