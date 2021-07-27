@@ -19,13 +19,15 @@ class GetComment extends Component{
             console.log(error);
         }
     }
-    render(){
-        return(
+    render() {
         const CommentData = this.state.comments
-        const mapData = CommentData.map((comment, videoId) => (<td key={videoId}>{comment.comment}</td>)
-        )
-    )}
+        const returnData = CommentData.map((comment, i) => (<td key={i}>{comment.comment}</td>));
+        return (
+            <tr>
+                {returnData}
+            </tr>
+        );
+    }
 
 }
-
 export default GetComment;
