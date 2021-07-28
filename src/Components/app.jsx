@@ -85,6 +85,20 @@ class App extends Component{
 
     
 
+    getComments = async () => {
+        let res = await axios.get('https://127.0.0.1:8000/comment/')
+        this.setState({
+            comments: res.data
+        })
+    }
+
+    likeComment = async () => {
+        let res = await axios.patch(`https://127.0.0.1:8000/comment/?${this.state.selected_comment}`)
+        this.setState({
+            selected_comment: res.data
+        })
+    }
+
 render() {
     console.log(this.state.defaultVideo);
     console.log(this.state.relatedVideos);
@@ -116,6 +130,7 @@ render() {
           </div>
           </div>
           </div>
+
         </React.Fragment>
     )
   }
