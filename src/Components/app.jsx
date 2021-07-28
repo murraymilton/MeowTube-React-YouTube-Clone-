@@ -53,18 +53,18 @@ class App extends Component{
     this.setState({
       selectedVideo: video
     })
-    this.collapseSearchResults();
-    this.defineDefaultValues(video.id.videoId, video.snippet.title, video.snippet.description)
-    this.getRelatedVideos(video.id.videoId)
+    this.SearchResults();
+    this.DefaultValues(video.id.videoId, video.snippet.title, video.snippet.description)
+    this.RelatedVideos(video.id.videoId)
   }
 
-  collapseSearchResults = () => {
+  SearchResults = () => {
     this.setState({
       searchResults: []
     })
   }
 
-  defineDefaultValues = (id, name, des) => {
+  DefaultValues = (id, name, des) => {
     this.setState({
       defaultVideo: id,
       title: name,
@@ -116,13 +116,8 @@ render() {
             <VideoComment videos={this.state.videos} />
             <div>
             <div><div className="text-center">
-          <h1>{this.state.title}</h1>
-          <iframe id="player" 
-          type="text/html" 
-          width="640" height="390"
-          src={url}
-          alt="Else Statement"
-          frameborder="0" > 
+                <h1>{this.state.title}</h1>
+                  <iframe id="player" type="text/html" width="640" height="390"src={url}alt="Else Statement"frameborder="0" > 
           </iframe>
           <h2>{this.state.description}</h2>
           </div>
