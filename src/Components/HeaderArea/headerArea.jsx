@@ -1,39 +1,31 @@
 import React from 'react';
 import './headerArea.css';
 import {FaYoutube} from 'react-icons/fa'
-import {MdSearch, MdVideoCall, MdViewComfy} from 'react-icons/md'
+import {MdMenu, MdSearch, MdVideoCall, MdViewComfy} from 'react-icons/md'
 import {AiTwotoneBell} from 'react-icons/ai'
+import Avatar from 'react-avatar';
 
 function HeaderArea(){
     return(
-        <body>
-        <div className="HeaderArea">
-            <div className="Header">
-                <header className="header">
-                    <button className="button">
-                        &#9776;
-                    </button>
-                    <FaYoutube color="red" fontSize="3rem"/>
-                    <div>MeowTube</div>
-                </header>
-                <div className="Search">
-                    <input type="search" placeholder="Search"></input>
-                    <div className="search">
-                        <MdSearch fontSize="3rem"/> 
-                        </div>
-                </div>
-                <div className="Icon">
-                    <div className="icon"><MdVideoCall fontSize="2.8rem"/></div>
-                    <div className="icon"><MdViewComfy fontSize="2.8rem"/></div>
-                    <div className="icon"><AiTwotoneBell fontSize="2.8rem"/></div>
-                    <div className="icon">
-                        <img src="/images/supercat.jpg"alt="supercat"/></div>
+        <div className="header">
+            <div className="header_left">
+                    <MdMenu title ="MeowTube"className="header_logo" size="3rem"/>
+                    <FaYoutube className="header_logo"color="red" fontSize="3rem"/>
+                    </div>
+                    <div className="header_input">
+                    <input type="text" placeholder="Search"></input>
+                    <MdSearch className="header_inputButton"fontSize="1.5rem"/> 
+                    </div>
+                    <div className="header_icons">
+                    <MdVideoCall  className="header_icon"size="2.0rem"/>
+                    <MdViewComfy className="header_icon" size="2.0rem"/>
+                    <AiTwotoneBell className="header_icon" size="2.0rem"/>
+                    <Avatar alt="Super Cat"src="/images/supercat.png" size="2.0rem"/>
+                    </div>
                     
-                </div>
-            </div>
         </div>
-        </body>
     );
 }
 
 export default HeaderArea;
+

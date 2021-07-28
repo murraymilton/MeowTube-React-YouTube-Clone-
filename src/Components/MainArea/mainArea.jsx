@@ -22,7 +22,7 @@ function MainArea(){
                     </div>
                     <div className="Quick_Icon">
                         <BsFillCollectionPlayFill color="grey"fontSize="3rem"/>
-                        <div>Subsriptions</div>
+                        <div>Subsription</div>
                     </div>
                     <div className="Library"></div>
                     <div className="Quick_Icon">
