@@ -28,6 +28,13 @@ function RecommendedVideos () {
                 channelImage="https://i.ytimg.com/vi/8FUOnGMc66w/maxresdefault.jpg"
                 channel="CatsInTheMiddle"
                 image=""/>
+                <ThumbnailDisplay 
+                title="Cats Dance"
+                views="10.7M Views"
+                timestamp="3 days"
+                channelImage="https://i.ytimg.com/vi/8FUOnGMc66w/maxresdefault.jpg"
+                channel="CatsInTheMiddle"
+                image=""/>
             </div>
         </div>
     )
