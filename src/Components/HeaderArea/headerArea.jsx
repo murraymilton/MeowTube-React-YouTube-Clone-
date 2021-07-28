@@ -9,7 +9,7 @@ function HeaderArea(){
     return(
         <div className="header">
             <div className="header_left">
-                    <MdMenu className="header_logo" size="3rem"/>
+                    <MdMenu title ="MeowTube"className="header_logo" size="3rem"/>
                     <FaYoutube className="header_logo"color="red" fontSize="3rem"/>
                     </div>
                     <div className="header_input">

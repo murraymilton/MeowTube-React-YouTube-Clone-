@@ -10,17 +10,21 @@ import SideBarRow from './SideBarRow';
 function SideBar () {
     return (
         <div className="sidebar">
-            <SideBarRow Icon={MdHome}title="Home" color="red" />
+            <SideBarRow selected Icon={MdHome}title="Home" color="red" />
             <SideBarRow Icon={FaGripfire}title="Trending"/>
             <SideBarRow Icon={BsFillCollectionPlayFill}title="Subsriptions"/>
             <SideBarRow Icon={MdVideoLibrary}title="Video"/>
-            <SideBarRow Icon={MdHome}title="Home"/>
-            <SideBarRow Icon={MdHome}title="Home"/>
-            <SideBarRow Icon={MdHome}title="Home"/>
-            <SideBarRow Icon={MdHome}title="Home"/>
-            <SideBarRow Icon={MdHome}title="Home"/>
-            <SideBarRow Icon={MdHome}title="Home"/>
-            <SideBarRow Icon={MdHome}title="Home"/>
+            <hr/>
+            <SideBarRow selected Icon={MdVideoLibrary}title="Library" color="red" />
+            <SideBarRow Icon={MdHistory}title="History"/>
+            <SideBarRow Icon={MdWatchLater}title="Subsriptions"/>
+            <SideBarRow Icon={MdPlaylistPlay}title="MeowTube Videos"/>
+            <SideBarRow Icon={GiGamepad}title="Gaming"/>
+            <SideBarRow Icon={MdRssFeed}title="Go Live"/>
+            <SideBarRow Icon={FaFutbol}title="Sports"/>
+            <SideBarRow Icon={FaMusic}title="Music"/>
+            <SideBarRow Icon={FaNewspaper}title="News"/>
+            <hr/>
 
         </div>
     )

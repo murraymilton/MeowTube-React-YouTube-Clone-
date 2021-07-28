@@ -5,7 +5,6 @@ import RelatedVideos from './VideoSearch/relatedVideos';
 import VideoComment from './VideoComment/videoComment';
 import './app.css'
 import axios from 'axios';
-import MainArea from './MainArea/mainArea';
 import RecommendedVideos from './RecommendedVideos/recommendedVideos';
 import SideBar from './SideBar/sideBar';
 
@@ -111,7 +110,6 @@ render() {
               <SideBar/>
               <RecommendedVideos/>
             </div>
-            <MainArea/>
             <VideoSearch videos={this.state.videos} mapVideos={this.mapVideos} />
             <VideoComment videos={this.state.videos} />
             <RelatedVideos relatedVideos={this.state.relatedVideos} videoInfo={this.videoInfo} displayVideos={this.displayVideos} />
