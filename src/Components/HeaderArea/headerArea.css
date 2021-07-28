@@ -1,82 +1,44 @@
-html {
-  font-size: 62.5%;
-  box-sizing: border-box;
-}
-body {
-  font: 1.6rem helvetica;
-  height: 5vh;
-  margin: 0;
-  background-color: #f9f9f9;
-}
-.headerArea {
-  height: 6rem;
-  width: 85%;
-}
-.Header {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 10px;
-  height: 6rem;
-  width: 100%;
-  top: 0;
-  background-color: white;
-  position: fixed;
-}
 .header {
   display: flex;
   align-items: center;
+  justify-content: space-between;
+  padding: 20px;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background-color: white;
 }
-.header > div {
-  font-size: 2rem;
+
+.header_logo {
+  height: 25px;
+  object-fit: contain;
+  margin-left: 20px;
 }
-.button {
-  border: none;
-  font-size: 2.5rem;
-  background: none;
-  margin: 0 12px;
-}
-input[type="search"] {
-  height: 3.5rem;
-  width: 100%;
-  border: none;
-  flex: 1;
-}
-input::placeholder {
-  font-size: 2rem;
-}
-.Search {
+
+.header_input {
   display: flex;
   align-items: center;
   width: 40%;
-  border: 1px solid lightgray;
+  border: 1px solid black;
 }
-.search {
+
+.header_icon {
+  margin-right: 8px;
+}
+
+.header_inputButton {
   width: 50px !important;
   background-color: #fafafa;
   border-left: 1px solid lightgray;
-  border-right: 1px solid lightgray;
-  color: black;
-  cursor: pointer;
-  padding: 0 10 px;
+  color: gray;
 }
-.Icon {
+
+.header_input > input {
+  flex: 1;
+  border: none;
+}
+
+.header_icons {
   display: flex;
   align-items: center;
-  margin: 12px;
-}
-.Icon > div {
-  padding: 0 12px;
-}
-.Icon > div > img {
-  border-radius: 50%;
-  height: 40px;
-  height: 40px;
-}
-.button {
-  width: 50px !important;
-  border-color: #fafafa;
-  border-left: 1px solid lightgray;
-  color: gray;
-  cursor: pointer;
 }
