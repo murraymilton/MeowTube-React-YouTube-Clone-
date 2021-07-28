@@ -80,17 +80,17 @@ class App extends Component{
         })
     }
 
-render() {
-    return(
-        <React.Fragment>
-            <HeaderArea/>
-            <MainArea/>
-            <VideoSearch videos={this.state.videos} mapVideos={this.mapVideos} />
-            <VideoDisplay displayVideos={this.displayVideos} />
-            <VideoComment videos={this.state.videos} />
-            <RelatedVideos relatedVideos={this.state.relatedVideos} videoInfo={this.videoInfo} displayVideos={this.displayVideos} />
-        </React.Fragment>
-    )
-  }
+    render() {
+        return(
+            <React.Fragment>
+                <HeaderArea/>
+                <MainArea/>
+                <VideoSearch videos={this.state.videos} mapVideos={this.mapVideos} />
+                <VideoDisplay displayVideos={this.displayVideos} />
+                <VideoComment videos={this.state.videos} />
+                <RelatedVideos relatedVideos={this.state.relatedVideos} videoInfo={this.videoInfo} displayVideos={this.displayVideos} />
+            </React.Fragment>
+        )
+    }
 }
 export default App;
